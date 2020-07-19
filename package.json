@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --target=production"
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.901.9",
     "@angular/animations": "~9.1.11",
     "@angular/cdk": "^9.2.4",
+    "@angular/cli": "~9.1.9",
     "@angular/common": "~9.1.11",
     "@angular/compiler": "^9.1.11",
     "@angular/core": "~9.1.11",
@@ -27,15 +30,15 @@
     "@tinymce/tinymce-angular": "^4.0.0",
     "angular-inline-editors": "^2.0.4",
     "cloudinary-core": "^2.10.1",
+    "express": "^4.17.1",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.5.4",
     "tinymce": "^5.4.0",
     "tslib": "^1.10.0",
+    "typescript": "~3.8.3",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.9",
-    "@angular/cli": "~9.1.9",
     "@angular/compiler-cli": "~9.1.11",
     "@types/hammerjs": "^2.0.36",
     "@types/jasmine": "~3.5.0",
@@ -51,7 +54,10 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "tslint": "~6.1.0"
+  },
+  "engines": {
+    "node": "12.18.0",
+    "npm": "6.14.4"
   }
 }
